@@ -16,7 +16,9 @@
 		var input = document.getElementsByTagName("input");
 		var str = document.getElementById("result").innerHTML;
 		var arr = str.split(",");
-		input[0].innerHTML = arr[0];
+		for (var i = 0; i < input.length; i++) {
+			input[i].value = arr[i];
+		}
 	</script>
 </body>
 </html>
