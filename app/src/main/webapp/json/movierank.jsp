@@ -9,12 +9,31 @@
 <body>
 	<button id="btn" onclick="loadMovie()">박스오피스 조회</button>
 	<div id="result"></div>
+	<hr>
 	<div id="info"></div>
 	<script>
 		function loadInfo(movieCd){
 			console.log(movieCd);
 			//코드에 해당하는 영화의 상세정보를 조회-감독,출연배우 나오도록
-			
+			//xhttp
+			var xhttp = new XMLHttpRequest();
+			//onload
+			xhttp.onload = function(){
+			var list = JSON.parse(xhttp.responseText);
+			var movieInfo = list.movieInfoResult.movieInfo;
+				
+			for(movie in movieInfo){
+				console.log(movie.actors);
+			}
+				document.getElementById("info").innerHTML+=
+					"<div>"+movieInfo.actors[0].peopleNm+"</div>";
+				console.log(movieInfo);
+				
+			}
+			//open,send
+			var url="http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd="+movieCd;
+			xhttp.open("get",url);
+			xhttp.send();
 		}
 		function loadMovie() {
 			var xhttp = new XMLHttpRequest();
