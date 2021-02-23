@@ -18,6 +18,8 @@ div {
 	$(function() {
 		//to do
 		//id값이 apple인 사과의 값을 받아와서 div id=choose에 붙이기
+		//$("#choose").append($("#apple"));
+		$("#choose").append($("#apple").clone());
 	});
 </script>
 </head>
