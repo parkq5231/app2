@@ -30,9 +30,10 @@
 		//console에선 잘 되는데 jsp 파일에선 안됨 이유를 모르겠음
 		var hobby = document.myForm.hobby;
 		for(var i = 0 ; i < hobby.length;i++){
-			if(hobby[i].checked==false){
+			console.log(hobby[i].checked)
+			if(!(hobby[i].checked==true)){
 			alert("hobby must be checked");
-			document.forms.myForm.hobby.focus();
+			document.forms.myForm.hobby[0].focus();
 			return false;
 			}
 		}			

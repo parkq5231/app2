@@ -13,7 +13,7 @@ public class FindName extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		// id 파라미터에 해당하는 이름을 검색해서 리턴
-		int a =5/0;
+		// int a =5/0;
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {

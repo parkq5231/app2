@@ -22,7 +22,9 @@
 		document.body.appendChild(div);
 	}
 	function clickHandler(e) {
-		console.log(e.target.innerHTML, '클릭됨')
+		var cntDiv = document.getElementsByTagName("div").length
+		console.log(e.target.innerHTML, '클릭됨 / ', '남은 div 숫자', cntDiv)
+		e.target.remove()
 	}
 </script>
 </body>
