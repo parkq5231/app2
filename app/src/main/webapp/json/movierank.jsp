@@ -22,13 +22,16 @@
 			var list = JSON.parse(xhttp.responseText);
 			var movieInfo = list.movieInfoResult.movieInfo;
 				
-			for(movie in movieInfo){
-				console.log(movie.actors);
-			}
+			for(movie in movieInfo){				
+					//console.log(movieInfo[movie])
 				document.getElementById("info").innerHTML+=
-					"<div>"+movieInfo.actors[0].peopleNm+"</div>";
-				console.log(movieInfo);
-				
+					movie+":"+movieInfo[movie]+"<br>";
+				//console.log(movieInfo);
+				if(typeof movieInfo[movie] == "object"){
+					document.getElementById("info").innerHTML+=
+						movie+":"+movieInfo[movie].actors;
+					}
+				}//end of for
 			}
 			//open,send
 			var url="http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd="+movieCd;
