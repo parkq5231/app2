@@ -13,7 +13,7 @@
 	<div id="info"></div>
 	<script>
 		function loadInfo(movieCd){
-			console.log(movieCd);
+			//console.log(movieCd);
 			//코드에 해당하는 영화의 상세정보를 조회-감독,출연배우 나오도록
 			//xhttp
 			var xhttp = new XMLHttpRequest();
@@ -22,16 +22,17 @@
 			var list = JSON.parse(xhttp.responseText);
 			var movieInfo = list.movieInfoResult.movieInfo;
 				
-			for(movie in movieInfo){				
-					//console.log(movieInfo[movie])
 				document.getElementById("info").innerHTML+=
-					movie+":"+movieInfo[movie]+"<br>";
+					"영화 제목:"+movieInfo.movieNm+"<br>"+
+					"감독:"+movieInfo.directors[0].peopleNm+"<br><hr>";
+			//	for(movie in movieInfo){				
+					//console.log(movieInfo[movie])
 				//console.log(movieInfo);
-				if(typeof movieInfo[movie] == "object"){
-					document.getElementById("info").innerHTML+=
-						movie+":"+movieInfo[movie].actors;
-					}
-				}//end of for
+				//if(typeof movieInfo[movie] == "object"){
+				//document.getElementById("info").innerHTML+=
+				//movie+":"+movieInfo.actors[0];
+				//}
+			//	}//end of for
 			}
 			//open,send
 			var url="http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=f5eef3421c602c6cb7ea224104795888&movieCd="+movieCd;
