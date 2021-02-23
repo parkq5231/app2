@@ -12,7 +12,7 @@
 			alert("Name must be filled out");
 			document.forms.myForm.fname.focus();
 			return false;
-		}
+		}//end of if
 		// value, selectedIndex
 		// var job = document.forms.myForm.job.value;
 		// var job = document.forms[0].elements[1].value;
@@ -23,7 +23,7 @@
 			alert("Job must be selected");
 			document.forms.myForm.job.focus();
 			return false;
-		}
+		}//end of if
 		// 채크박스 과제
 		// 채크된 갯수가 하나 이상인지 채크 for 사용
 		// document.myForm.hobby.length
@@ -34,10 +34,10 @@
 			if(!(hobby[i].checked==true)){
 			alert("hobby must be checked");
 			document.forms.myForm.hobby[0].focus();
+			
 			return false;
 			}
-		}			
-		//
+		}//end of for
 		document.forms["myForm"].submit();
 	}//end of function
 </script>
