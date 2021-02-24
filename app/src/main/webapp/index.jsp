@@ -4,6 +4,12 @@
 <style>
 </style>
 </head>
+<script>
+	var n = localStorage.getItem("name");
+	if (n != null) {
+		alert(n);
+	}
+</script>
 <body>
 	<h2>Hello World!</h2>
 	<div id="result">event test</div>
@@ -20,6 +26,6 @@
 			//target = 이벤트가 발생한 대상 태그
 			console.log(e.target.id, e.clientX, e.clientY);
 		}
-	</script> 
+	</script>
 </body>
 </html>
